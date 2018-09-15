@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect('/', '/scorecards/index');
+
+Route::group(['prefix' => '/scorecards', 'as' => 'scorecards.'], function() {
+    Route::get('/index', 'ScorecardController@index')->name('index');
 });
