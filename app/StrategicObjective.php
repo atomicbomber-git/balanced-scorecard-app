@@ -16,4 +16,9 @@ class StrategicObjective extends Model
         'name',
         'perspective'
     ];
+
+    public function key_performance_indicators()
+    {
+        return $this->hasMany(KeyPerformanceIndicator::class);
+    }
 }

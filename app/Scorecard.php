@@ -14,4 +14,9 @@ class Scorecard extends Model
     {
         return $this->hasMany(StrategicObjective::class);
     }
+
+    public function period()
+    {
+        return $this->year . "-" . ($this->year + 1);
+    }
 }

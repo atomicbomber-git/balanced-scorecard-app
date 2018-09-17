@@ -13,6 +13,10 @@
 
 Route::redirect('/', '/scorecards/index');
 
-Route::group(['prefix' => '/scorecards', 'as' => 'scorecards.'], function() {
+Route::group(['prefix' => '/scorecard', 'as' => 'scorecard.'], function() {
     Route::get('/index', 'ScorecardController@index')->name('index');
+});
+
+Route::group(['prefix' => '/scorecard_detail', 'as' => 'scorecard_detail.'], function() {
+    Route::get('/index/{scorecard}', 'ScorecardDetailController@index')->name('index');
 });
